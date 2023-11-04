@@ -25,12 +25,8 @@ void Harl::complain(std::string level)
     void (Harl::*funPtr[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string strings[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
-    while (i < 4)
-    {
-        if (level == strings[i])
-            break;
+    while (i < 4 && level != strings[i])
         i++;
-    }
     switch (i)
     {
         case 0:
