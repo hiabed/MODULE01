@@ -38,5 +38,4 @@ Harl::Harl()
 
 Harl::~Harl()
 {
-    std::cout << "Harl is destroyed!!\n";
 }
