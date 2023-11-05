@@ -22,6 +22,7 @@ void Harl::error()
 
 void Harl::complain(std::string level)
 {
+    
     void (Harl::*funPtr[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string strings[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     

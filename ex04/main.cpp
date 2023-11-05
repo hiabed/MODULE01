@@ -2,15 +2,21 @@
 
 int main(int ac, char **av)
 {
-    if(ac == 4)
+    if (!av[2][0])
+        return 0;
+    if(ac == 4 && av[2][0])
     {
         std::string buffer;
         std::ifstream in_file(av[1]);
-        if(in_file.is_open())
+        if(in_file.is_open() && av[2][0])
         {
             std::string newFileName = std::string(av[1]) + ".replace";
             std::ofstream out_file(newFileName.c_str());
-
+            if (!strcmp(av[2], av[3]))
+            {
+                while(std::getline(in_file, buffer))
+                    out_file << buffer << std::endl;
+            }
             while(std::getline(in_file, buffer))
             {
                 int index = buffer.find(av[2]);
