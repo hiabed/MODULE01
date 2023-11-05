@@ -1,4 +1,4 @@
-NAME = Brain
+NAAME = replace
 
 CXX = c++
 
@@ -8,15 +8,15 @@ CXXFILES = main.cpp \
 
 OBJ = ${CXXFILES:.cpp=.o}
 
-all: ${NAME}
+all: ${NAAME}
 
-${NAME}: ${OBJ}
-	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
+${NAAME}: ${OBJ}
+	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAAME}
 
 clean:
 	rm -f ${OBJ}
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f ${NAAME}
 
 re: fclean all

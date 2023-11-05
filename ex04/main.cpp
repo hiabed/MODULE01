@@ -12,11 +12,6 @@ int main(int ac, char **av)
         {
             std::string newFileName = std::string(av[1]) + ".replace";
             std::ofstream out_file(newFileName.c_str());
-            if (!strcmp(av[2], av[3]))
-            {
-                while(std::getline(in_file, buffer))
-                    out_file << buffer << std::endl;
-            }
             while(std::getline(in_file, buffer))
             {
                 int index = buffer.find(av[2]);
@@ -24,7 +19,7 @@ int main(int ac, char **av)
                 {
                     buffer.erase(index, strlen(av[2]));
                     buffer.insert(index, av[3]);
-                    index = buffer.find(av[2]);
+                    index = buffer.find(av[2], index + strlen(av[3]));
                 }
                 out_file << buffer << std::endl;
             }

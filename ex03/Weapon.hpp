@@ -9,8 +9,8 @@ private:
     std::string _type;
 public:
     void setType(std::string type);
-    std::string getType();
-    Weapon(std::string type);
+    const std::string &getType();
+    Weapon(const std::string &type);
     ~Weapon();
 };
 
